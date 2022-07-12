@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class MyClass{
+	int x;
+public:
+	MyClass(int x){
+		this->x = x;//
+		(*this).x = x;
+	}
+	~MyClass(){
+		cout << "hi from destructor";
+	}
+	int getX(){
+		return x;
+	}
+	MyClass copy(){
+		return *this;
+	}
+	MyClass& print(){
+		cout << " hi ";
+		return *this;
+	}
+	void destroy(){
+		delete this;
+	}
+};
+
+int main()
+{
+	MyClass *o1 = new MyClass(101);
+//	cout << obj.getX()<<endl;
+	MyClass *o2 = new MyClass(200);
+//	cout << obj2.getX() << endl;
+	//obj2 = obj.copy();
+//	cout << obj2.getX() << endl;
+	o1->destroy();
+	o2->print().print().print();
+	return 0;
+}

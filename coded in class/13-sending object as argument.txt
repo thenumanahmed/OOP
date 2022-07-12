@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+class MyClass{
+	int x;
+	int y;
+public:
+	MyClass(int i, int j){
+		x = i;
+		y = j;
+	}
+	MyClass(MyClass& o){
+		x = o.x;
+		y = o.y;
+		cout << "Hi from copy constructor";
+	}
+	void printValues(){
+		cout << "X: " << x << "Y: " << y << endl;
+	}
+
+};
+
+void fun1(MyClass obj){
+	obj.printValues();
+	cout << &obj << endl;
+}
+
+void fun2(MyClass& obj){
+	obj.printValues();
+	cout << &obj << endl;
+}
+
+int main(){
+	MyClass obj(2,5);
+	cout << &obj;
+	fun2(obj);
+}
+
+

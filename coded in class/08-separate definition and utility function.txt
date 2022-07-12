@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class Box{
+private: 
+	int length, width, height, volume;
+	void computeVolume();
+public:
+	Box(int i = 0, int j = 0, int k = 0){
+		length = i;
+		width = j;
+		height = k;
+	}
+	void setLength(int i);//declaration
+	int getLength();//declaration
+	int getVolume(){
+		computeVolume();
+		return volume;
+	}
+};
+void Box::setLength(int x){//definitioin
+	length = x;
+}
+int Box::getLength(){//definition
+	return length;
+}
+void Box::computeVolume(){
+	volume = height * width * length;
+}
+int main(){
+	Box box1(2,5,6);
+	//box1.setLength(101);
+	cout << box1.getLength() << endl;
+	cout<<box1.getVolume()<<endl;
+}

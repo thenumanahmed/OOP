@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+class Box{
+private: 
+	int length, width, height, volume;
+	void computeVolume(){// utility 
+		volume = length * width * height;
+	}
+public:
+	Box(int i = 0, int j = 0, int k = 0){
+		length = i;
+		width = j;
+		height = k;
+	}
+	Box& operator = (Box& obj){
+		length = obj.length;
+		width = obj.width;
+		height = obj.height;
+		return *this;
+	}
+	int getVolume(){
+		computeVolume();
+		return volume;
+	}
+	Box& fun1(){
+		cout << "function 1"<<endl;
+		return *this;
+	}
+	void fun2(){
+		cout << "function 2"<<endl;
+	}
+	
+};
+int main(){
+	Box box1;
+	box1.fun1().fun2();
+	
+	Box box2(4, 5, 9),box3,box4,box5;
+	box3 = box4 = box5 = box2;
+
+	cout << box3.getVolume();
+}

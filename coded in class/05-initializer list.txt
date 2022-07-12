@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+class Student{
+	int a,b,c;
+public:
+	Student(int i,int j, int k):a(i),b(j),c(k){
+	
+	}
+};
+
+int main(){
+	Student std(1, 7, 8);
+	return 0;
+}
