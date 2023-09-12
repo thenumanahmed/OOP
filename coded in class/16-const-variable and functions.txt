@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class MyClass{
+	const int x;
+	int y;
+public:
+	MyClass(int  i):x(i){
+		
+	}
+	int getX(){
+		return x;
+	}
+	int setY(int i)const {
+		//y = i;// here the variable y is not const, but the function is const, so you can not change the value of any member variabl inside this function
+	}
+};
+
+int main(){
+	MyClass obj1(101), obj2(102);
+	cout << obj1.getX() << endl;
+	return 0;
+}
+
+

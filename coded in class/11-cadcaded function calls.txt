@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class BankAccount{
+	int balance;
+public:
+	BankAccount(int i=0){
+		balance = i;
+	}
+	BankAccount& deposit(int balance){
+		this->balance = this->balance + balance;
+		return *this;
+	}
+	void printBalance(){
+		cout << "the balance is: " << balance<<endl;
+	}
+};
+
+int main(){
+	BankAccount myAccount;
+	myAccount.deposit(10).deposit(100).deposit(150).deposit(10000);
+	
+/*	myAccount.deposit(10);
+	myAccount.deposit(100);
+	myAccount.deposit(150);
+	myAccount.deposit(10000);
+	*/
+	myAccount.printBalance();
+}
+
+

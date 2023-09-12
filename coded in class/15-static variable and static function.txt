@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+
+class MyClass{
+public:
+	static int counter;
+	int x;
+	MyClass(){
+		counter = counter + 1;
+	}
+	int getCounter(){
+		return counter;
+	}
+	static void Fun1(){
+		cout << "Hi I am static function" << endl;
+		//x = 10; you can not use non static variables in side the static function
+	}
+};
+int MyClass::counter = 0;
+int main(){
+	MyClass obj1, obj2, obj3;
+	/*dcout<<obj2.getCounter() << endl;
+
+	cout << MyClass::counter << endl;
+	cout << obj3.counter << endl;
+	*/
+
+	//cout << sizeof(obj1);
+	//MyClass::Fun1();
+	//MyClass::getCounter();
+	return 0;
+}
+
+

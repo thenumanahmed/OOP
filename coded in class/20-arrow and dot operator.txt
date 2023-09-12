@@ -1,0 +1,41 @@
+// C++ program for required implementation
+#include <iostream>
+using namespace std;
+class MyClass{
+	int x;
+public:
+	MyClass(int i=0){
+		x = i;
+		cout << "Hi from the constructor" << endl;
+	}
+	int getX(){
+		return x;
+	}
+	~MyClass(){
+		cout << "Bye from the destructor"<<endl;
+	}
+};
+
+int main()
+{
+	{
+		MyClass obj1;
+		// where is the obj1 is created? stack or heap?
+		MyClass *ptr;
+		// where is the obj2 is created? stack or heap? it is on stack because it still
+		// just a pointer variable.
+		obj1.getX();// you call the functioni using dot operator if the object lies on stack.
+		ptr = new MyClass(); // here "new MyClass();" is created
+		// on heap and its address was assigned to pointer *obj2.
+		// if you do not delete the heap object, it will stay there in the
+		// memory as long as the system(PC) is running
+		ptr->getX(); // you call the function using arrow operator if the object lies on heap..
+		(*ptr).getX();//you retrieved the object from the pointer and then you used the dot opetor.
+		delete ptr;
+		new MyClass();// an object created on heap
+		//but you can not detete this object as you
+		// do not have any ref/ptr/name for this object
+	}
+	
+	return 0;
+}

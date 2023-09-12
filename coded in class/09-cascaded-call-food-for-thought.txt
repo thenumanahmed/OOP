@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class Box{
+private: 
+	int length, width, height, volume;
+public:
+	Box(int i = 0, int j = 0, int k = 0){
+		length = i;
+		width = j;
+		height = k;
+	}
+	void fun1(){
+		cout << "function 1";
+	}
+	void fun2(){
+		cout << "function 2";
+	}
+};
+int main(){
+	Box box1;
+	box1.fun1().fun2();
+	int x, y, z;
+	x = y = z;
+}

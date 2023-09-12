@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+class MyClass{
+	int x;
+public:
+	MyClass(int x){
+		this->x = x;//
+		(*this).x = x;
+	}
+	int getX(){
+		return x;
+	}
+};
+
+int main()
+{
+	MyClass obj(101);
+	cout << obj.getX()<<endl;
+	return 0;
+}

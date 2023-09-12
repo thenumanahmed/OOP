@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+class MyClass{
+	 static int x;
+public:
+	MyClass(){
+		x++;
+	}
+	 int getX(){
+		 return x;
+	}
+};
+int MyClass::x=0;
+
+int main(){
+	MyClass obj1, obj2, obj3;
+	cout << obj1.getX() << endl;
+
+		return 0;
+}
+

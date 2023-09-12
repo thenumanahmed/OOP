@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class Box{
+	int length, width, height;
+	int volume;
+	void calcVolume();
+public:
+	Box(int i=0,int j=0, int k=0):length(i),width(j),height(k){
+	
+	}
+	int getLength();// accessor or getter function
+	void setLength(int i); //mutator or setter function
+	int getVolume();
+	Box fun1(){
+		cout << "function 1"<<endl;
+		return *this;
+	}
+	Box fun2(){
+		cout << "function 2"<<endl;
+		return *this;
+	}
+	Box& operator = (Box &obj){
+		length = obj.length;
+		width = obj.width;
+		height = obj.height;
+		cout << "hello" << endl;
+		return *this;
+	}
+};
+
+void Box::calcVolume(){
+	volume = length * height * width;
+}
+int Box::getLength(){
+	return length;
+}
+void Box::setLength(int i){
+		length= i;
+}
+int Box::getVolume(){
+	calcVolume();
+	return volume;
+}
+int main(){
+	Box box(1, 7, 8);
+	box.setLength(10);
+	cout<<box.getLength()<<endl;
+	cout << box.getVolume()<<endl;
+	box.fun1().fun2();
+	Box box1, box2;
+	box2 = box1 = box;
+	cout << box2.getVolume() << endl;
+	return 0;
+
+}
